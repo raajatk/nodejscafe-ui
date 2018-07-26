@@ -1,11 +1,11 @@
 var app = angular.module("nodejscafe-ui");
 
-app.controller("postController", ["$scope","$routeParams","$http", function ($scope, $routeParams, $http) {
-    console.log("HOLA inside the POST controller ",$routeParams.postId);
+app.controller("postController", ["$scope","$routeParams","$http","appConfig", function ($scope, $routeParams, $http, appConfig) {
+    console.log("HOLA inside the POST controller ",$routeParams.postId," ",appConfig);
 
     var getBlogById = function(blogId){
       $http({
-        url:"http://localhost:3000/api/v1.0/nodejscafe/get/blogById/"+blogId,
+        url:appConfig.serverUrl+"api/v1.0/nodejscafe/get/blogById/"+blogId,
         method:"GET",
         headers:{"Content-Type":"application/json"}
       }).then(function(response){

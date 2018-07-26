@@ -1,6 +1,6 @@
 var app = angular.module("nodejscafe-ui",['ngResource','ngSanitize','ngRoute']);
 
-app.controller("appCtrl", ["$scope","CommonService","$http","$location",function ($scope,CommonService,$http,$location) {
+app.controller("appCtrl", ["$scope","CommonService","$http","$location","appConfig",function ($scope,CommonService,$http,$location,appConfig) {
   console.log("THE MAIN CONTROLLER CALLED.");
       $scope.data="HOLA";
       $scope.resData = "<p>hello this is demo code</p>"
@@ -23,7 +23,7 @@ app.controller("appCtrl", ["$scope","CommonService","$http","$location",function
 
       var getBlogs = function(){
         $http({
-          url:"http://localhost:3000/api/v1.0/nodejscafe/get/blogs/"+$scope.skip+"/"+$scope.limit,
+          url:appConfig.serverUrl+"api/v1.0/nodejscafe/get/blogs/"+$scope.skip+"/"+$scope.limit,
           method:"GET",
           headers:{"Content-Type":"application/json"}
         }).then(function(response){
@@ -34,7 +34,7 @@ app.controller("appCtrl", ["$scope","CommonService","$http","$location",function
 
       var getTotalNoOfBlogs = function(){
         $http({
-          url:"http://localhost:3000/api/v1.0/nodejscafe/get/blogs-count",
+          url:appConfig.serverUrl+"api/v1.0/nodejscafe/get/blogs-count",
           method:"GET",
           headers:{"Content-Type":"application/json"}
         }).then(function(response){
