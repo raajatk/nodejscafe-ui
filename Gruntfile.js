@@ -128,16 +128,20 @@ module.exports = function (grunt) {
     //ng-constant
       ngconstant: {
           options: {
-            name: 'appConfig',
+            name: 'nodejscafe-ui',
             wrap: '"use strict";\n\n{%= __ngModule %}',
-            space: '  '
+            space: ''
           },
           development: {
             options: {
               dest: '<%= config.app %>/scripts/config.js'
             },
             constants: {
-              ENV: 'development'
+              appVar: {
+                ENV: 'development',
+                serverUrl:'http://www.nodejscafe.com/',
+                DEBUG: true
+              }
             }
           },
           production: {
@@ -145,7 +149,11 @@ module.exports = function (grunt) {
               dest: '<%= config.app %>/scripts/config.js'
             },
             constants: {
-              ENV: 'production'
+              appVar: {
+                ENV: 'development',
+                serverUrl:'http://www.nodejscafe.com/',
+                DEBUG: true
+              }
             }
           },
           staging: {
@@ -153,7 +161,11 @@ module.exports = function (grunt) {
               dest: '<%= config.app %>/scripts/config.js'
             },
             constants: {
-              ENV: 'staging'
+              appVar: {
+                ENV: 'development',
+                serverUrl:'http://www.nodejscafe.com/',
+                DEBUG: true
+              }
             }
           }
         },

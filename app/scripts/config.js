@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module('appConfig', [])
+angular.module('nodejscafe-ui', [])
 
-.constant('ENV', 'staging')
+.constant('appVar', {ENV:'development',serverUrl:'http://www.nodejscafe.com/',DEBUG:true})
 
 ;

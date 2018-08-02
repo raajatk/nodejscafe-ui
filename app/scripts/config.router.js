@@ -2,23 +2,9 @@
 var app = angular
   .module('nodejscafe-ui')
 
-  // app.constant('appConfig', {
-  //   environment: "development",
-  //   serverUrl:'http://localhost:3000/',
-  //   DEBUG: true
-  // })
-
-  app.constant('appConfig', {
-    environment: "production",
-    serverUrl:'http://www.nodejscafe.com/',
-    DEBUG: false
-  })
-
-  // app.constant('appConfig', {
-  //   environment: "staging",
-  //   serverUrl:'http://www.nodejscafe.com:3000/',
-  //   DEBUG: true
-  // })
+  app.constant('appConfig', {ENV:'development',serverUrl:'http://www.nodejscafe.com/',DEBUG:true});
+  // app.constant('appConfig', {ENV:'staging',serverUrl:'http://staging.nodejscafe.com/',DEBUG:true});
+  // app.constant('appConfig', {ENV:'production',serverUrl:'http://www.nodejscafe.com/',DEBUG:true});
 
   app.config(function ($routeProvider) {
 
