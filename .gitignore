@@ -1,2 +1,6 @@
 bower_components
 .git
+node_modules
+dist
+.tmp
+package-lock.json
